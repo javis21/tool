@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{!-- <link rel="stylesheet" href="/style3.css"> --}}
+    <title>Document</title>
+</head>
+<body>
+      <div class="page-wrapper">
+
+  <div class="container-fluid">
+    <div class="row">
+       <div class="col-sm-12">
+          <div class="page-title-box">
+    <h1>{{this.title}} </h1>
+    
+     </div>
+    </div>
+    </div>
+ <form action="/assess/register" method="POST"> 
+
+ <!-- Input from User -->
+            <div  class="question">
+<div class="row">
+                    {{!-- <div class="col-lg-12"> --}}
+                        {{!-- <div class="card"> --}}
+
+{{!-- get data from base --}}
+  <div class="card">
+
+    {{#each question}}
+     {{#if main_question}}
+  <div class="card">
+{{/if}}
+<h1 class="card-header"> {{this.main_question}}</h1> 
+ <br>     
+              <span class="b">
+                <div class="card-body">
+                <h2 class="card-title" > {{this.sub_question}}</h2>
+            <p>     {{this.question}}  </p>
+             <input class="btn-check"  type="radio" id="QuestionA{{this.question_num}}" name="{{this.question_num}}"  value="yes"  id="QuestionA{{this.question_num}}">
+             <label  class=" btn btn-outline-success btn-gm col-sm-1" for="QuestionA{{this.question_num}}">yes</label>
+             <input class="btn-check" type="radio" id="QuestionB{{this.question_num}}" name="{{this.question_num}}" value="no" id="QuestionA{{this.question_num}}">
+             <label  class=" btn btn-outline-danger btn-gm col-sm-1" for="QuestionB{{this.question_num}}">no</label>
+             <input class="btn-check"  type="radio" id="QuestionC{{this.question_num}}" name="{{this.question_num}}"  value="idk"  checked id="QuestionA{{this.question_num}}">
+             <label  class=" btn btn-outline-warning   btn-gm col-sm-1" for="QuestionC{{this.question_num}}">NAN</label>
+
+           
+   {{!-- <select  name="{{this.question_num}}" >
+              <option value="List of users" >List of users</option>
+              
+              <option value="user1" >user1</option>
+              <option value="user2" >user2</option>
+              <option value="user3" >user3</option>
+
+            </select> --}}
+             
+             <select class="form-select col-md-2 d-inline p-2"   name="{{this.question_num}}" >
+                              <option value={{../user.username}} >Litst of users</option>
+
+               {{#each ../list}}
+              
+              <option value="{{this.fullname}}" >{{this.fullname}}</option>
+               {{/each}}
+           
+              </select>
+
+   <input   class="form-control col-md-2 d-inline p-2" type="text"  name="{{this.question_num}}" placeholder='comment'>
+
+           {{!-- <input type="file"  id="file-input" name="{{this.question_num}}" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,text/plain,text/html,.pdf" />   --}}
+    {{!-- <input type="file" id="file-input" accept="image/*" /> --}}
+
+            <input type="file" name="{{this.question_num}}" class="form-control col-md-2 d-inline p-2"  >    
+                <input type="text"  name="{{this.question_num}}" value="{{this.sub_category}}" hidden>
+
+            <br>
+
+</div>
+            </span>
+
+             {{#if main_question}}
+       </div>
+
+{{/if}}
+
+            {{/each}}
+  
+      </div>
+
+            {{!-- </div> --}}
+          
+              <br>   
+            
+   <button type="submit" class="btn btn-de-primary col-md-2 ">submit</button>
+                                    <button type="reset" class="btn btn-de-danger col-md-2">reset</button>   
+
+  {{!-- </div> --}}
+    </div>
+    </div>
+ </form>
+
+{{!-- <script>
+
+function send() {
+  var yes = 0;
+  var no = 0;
+  var idk = 0;
+
+
+  var form  = document.forms["f"];
+  var radioy = form.querySelectorAll("[type='radio'][value='yes']");
+  var radion = form.querySelectorAll("[type='radio'][value='no']");
+  var radioni = form.querySelectorAll("[type='radio'][value='idk']");
+
+  for(var i = 0; i < radioy.length; i++) {
+    if(radioy[i].checked) {
+      yes++;
+    }
+     if(radion[i].checked) {
+      no++;
+    }
+    if(radioni[i].checked) {
+      idk++;
+    }
+  }
+
+
+  document.getElementById("noo").innerHTML = no;
+  document.getElementById("yess").innerHTML = yes;
+  document.getElementById("idkk").innerHTML = idk;
+
+
+
+
+}
+
+
+</script> --}}
+
+
+{{!-- <form action="/assess/register" method="POST">
+  <!-- <p id="noo" name="noo"></p> -->
+  
+  <textarea readonly=readonly id="yess" name="yess"></textarea>
+  <textarea readonly=readonly id="idkk" name="idkk"></textarea>
+
+  <textarea readonly=readonly id="noo" name="noo"></textarea>
+  <input type="submit" value="send" onclick="send();">
+  
+</form> --}}
+</div>
+</div>
+</body>
+</html>
+
+
+                   
+
+                                 <script src="/assets/plugins/select/selectr.min.js"></script>
+        <script src="/assets/plugins/huebee/huebee.pkgd.min.js"></script>
+        <script src="/assets/plugins/datepicker/datepicker-full.min.js"></script>
+        <script src="/assets/plugins/moment/moment.js"></script>
+        <script src="/assets/plugins/imask/imask.js"></script>
+
+        <script src="/assets/pages/forms-advanced.js"></script>
+                <script src="/assets/js/app.js"></script>
+                <link href="/assets/plugins/select/selectr.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/plugins/huebee/huebee.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/plugins/datepicker/datepicker.min.css" rel="stylesheet" type="text/css" />
+
+         <!-- App css -->
+         <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+         <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+         <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- App js -->

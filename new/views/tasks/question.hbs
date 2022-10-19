@@ -1,0 +1,66 @@
+
+
+      
+
+<div class="mt-5 py-5 px-5">
+    <table class="table"  id="main-table">
+        <thead style="background-color: blue; color: white;">
+            <tr> 
+                
+              <th scope="col">id</th>    
+            <th scope="col">user</th>
+                        <th scope="col">answer</th>
+
+            <th scope="col">status</th>
+            <th scope="col">comment</th>
+                <th scope="col">file</th>
+                <th scope="col">assaessment</th>
+
+
+                        {{!-- <th scope="col">edit</th> --}}
+
+          
+            </tr>
+        </thead>
+        <tbody  id="myTable">
+            {{#each question}}
+            <tr>                 
+            <th scope="row">{{this.id_an}}</th>
+            <td>{{this.q3}}</td>
+                 <td>{{this.q2}}</td>
+
+            <td>{{this.completed}}</td>
+            <td>{{this.comment}}</td>
+             <td>{{this.file }}</td>
+         
+            <td>{{this.ids}}</td>
+
+
+            
+            <td>
+                                {{!-- <a href="/assessments/edit1" class="btn btn-sm btn-warning">edit</a> --}}
+                <a href="/assessments/edit3/{{this.id_ass}}" class="btn btn-sm btn-warning">edit</a>
+
+                
+               
+{{!-- 
+{{#if this.status}}
+                <a href="/assessments/finish/{{this.id_ass}}" class="btn btn-sm btn-danger">complete +</a>
+
+{{else}}
+                <a href="/assessments/missing/{{this.id_ass}}" class="btn btn-sm btn-danger">complete -</a>
+
+{{/if}} --}}
+                <a href="/assessments/view/{{this.id_ass}}" class="btn btn-sm btn-danger">view Team</a>
+
+            </td>
+            </tr>
+                       
+
+            {{/each}}
+        </tbody>
+    </table>
+
+</div>
+
+

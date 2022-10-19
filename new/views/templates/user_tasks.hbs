@@ -1,0 +1,91 @@
+
+
+      
+
+<div class="mt-5 py-5 px-5">
+      <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Tasks List</h4>
+                                <p class="text-muted mb-0">Tasks list for              
+                                   
+                                    <code> {{user.username}}</code>
+                                </p>
+                            </div><!--end card-header-->
+                            <div class="card-body">
+                                <div class="table-responsive">
+    <table class="table mb-0" id="main-table">     
+
+        {{!-- <thead style="background-color: blue; color: white;"> --}}
+                                                    <thead class="thead-light">
+
+            <tr> 
+              <th scope="col">id</th>    
+            <th scope="col">user</th>
+            <th scope="col">status </th>
+
+               <th scope="col">all question</th>
+               <th scope="col"> answered</th>
+                              <th scope="col"> not answered</th>
+                              <th scope="col"> action</th>
+
+
+            
+
+                        {{!-- <th scope="col">edit</th> --}}
+
+          
+            </tr>
+        </thead>
+        <tbody  id="myTable">
+  
+            {{#each question }} 
+                                 
+  
+
+            <tr>                    
+            <th scope="row">{{this.ids}}</th>
+
+            <td>{{this.q3}}</td>
+<td>
+{{#if this.nb}}
+                completed
+
+{{else}}
+              not completed
+
+{{/if}} 
+
+            </td>          
+
+                                    <th scope="row">{{this.nb_all}}</th>
+                                    <th scope="row">{{this.nb_c}}</th>
+                                    <th scope="row">{{this.nb_nc}}</th>
+
+
+
+            
+            <td>
+           
+
+             <span class="badge badge-boxed  badge-outline-success"> <a href="/question/user_quest/{{this.ids}}/{{this.q3}}">view questions </a> </span>
+                {{!-- <a href="/question/finish_tasks/{{this.ids}}/{{this.q3}}" class="btn btn-sm btn-warning">answer questions </a> --}}
+                {{!-- <a href="/question/report/{{this.ids}}" class="btn btn-sm btn-warning"> view report </a> --}}
+{{#if this.nb}}
+         <span class="badge badge-boxed  badge-outline-warning">      <a href="/question/report/{{this.ids}}"> view report </a> </span> 
+
+{{else}}
+        <span class="badge badge-boxed  badge-outline-danger">        <a href="/question/finish_tasks/{{this.ids}}/{{this.q3}}" >answer questions </a> </span>
+
+{{/if}} 
+            </td>
+            </tr>   
+                        {{/each}}
+
+         
+        </tbody>
+    </table>
+    </div>
+    </div>
+
+</div>
+

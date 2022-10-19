@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{!-- <link rel="stylesheet" href="/style2.css"> --}}
+<style>
+
+
+/**
+  Default Markup
+**/
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+/**
+  Component
+**/
+
+label {
+    width: 100%;
+    
+}
+
+.card-input-element {
+    display: none;
+    border-color: greenyellow;
+}
+
+.card-input {
+    margin: 10px;
+    
+    padding: 00px;
+}
+
+.card-input:hover {
+    cursor: pointer;
+         color: #2ecc71;
+
+}
+
+.card-input-element:checked + .card-input {
+     box-shadow: 0 0 1px 1px #2ecc71;
+     color: #2ecc71;
+ }
+
+
+
+</style>
+    <title>Document</title>
+</head>
+<body>
+   <form action="/auth3/register" method="POST"> 
+   
+
+
+
+   
+                <!-- Page-Title -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-title-box">
+                            <div class="float-end">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/profile">Intellisec</a></li>
+                                    <li class="breadcrumb-item"><a href="/page2">Assessment Information</a></li>
+                                       <li class="breadcrumb-item"><a href="/page31">demographic Configurations</a></li>
+
+                                    <li class="breadcrumb-item active">Assessment type</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Assessment Configurations</h4>
+                        </div>
+                        <!--end page-title-box-->
+                    </div>
+                    <!--end col-->
+                </div>
+                <!-- end page title end breadcrumb -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Assessment type</h4>
+                             
+                            </div><!--end card-header-->
+                            <div class="card-body">  
+                               
+                                           <div class="row">
+                                            <label class="col-md-3 my-1 control-label">Select Assessment</label> <br>
+                                            <div class="col-md-3 col-lg-3 col-sm-3  ">                                                
+                                              
+                                               
+  {{!-- {{#each category}} {{this.category}}  {{/each}} --}}
+{{#each category}}
+
+    
+        <label>
+          <input type="radio" name="candidate"  class="card-input-element" value="{{this.category}}" />
+
+            <div class="panel panel-default card-input">
+<!--               <div class="panel-heading">Product A</div> -->
+              <div class="panel-body">
+{{this.category}}
+              </div>
+            </div>
+
+        </label>
+
+
+
+
+
+
+{{!-- 
+
+ <input type="radio" class="btn-check" name="candidate" id="success-outlined"  autocomplete="off" value="{{this.category}}" >
+                                                <label class=" btn btn-outline-success btn-gm col-sm-2" for="success-outlined">{{this.category}}</label> <br> --}}
+{{/each}}
+                                                {{!-- <input type="radio" class="btn-check" name="candidate" id="danger-outlined"  autocomplete="off" value="CMMC">
+                                                <label class="btn btn-outline-success btn-gm col-sm-2" for="danger-outlined">CMMC </label>   <br> 
+
+   <input type="radio" class="btn-check" name="candidate" id="danger-outlinedd"  autocomplete="off" value="NIST4">
+                                                <label class="btn btn-outline-success btn-gm col-sm-2" for="danger-outlinedd">NIST revision 4</label>    <br> --}}
+
+                                            </div>
+                                           </div> <!--end row-->  
+                                                  
+
+                                  <button type="submit" class="btn btn-de-primary">Next ></button>
+                                    <button type="button" class="btn btn-de-danger">Cancel</button>                                                                   
+                            </div><!--end card-body-->
+                        </div><!--end card-->
+                    </div><!--end col-->
+                </div><!--end row-->
+
+                
+   </form>
+</body>
+</html>
+
+
+
+           
+
+
+
+
+
+
+
+
+{{!-- 
+
+      <form action="/auth3/register" method="POST"> 
+    Select Assessment: 
+    <br>
+
+ <input type="radio" name="as" id="nist" value="nist">
+ <label for="nist">NIST xxx</label>
+
+
+
+
+<input type="radio" name="as" id="iso" value="iso">
+<label for="iso">ISO xxxx</label>
+
+
+
+<input type="radio" name="as" id="cmmc" value="cmmc">
+<label for="cmmc">CMMC xxx</label>
+  <input name="candidate" type="radio" value="nist">
+   <label for="nist">NIST xxx</label>
+
+        <input name="candidate" type="radio" value="cmmc">
+         <label for="nist">cmmc xxx</label>
+
+        <input name="candidate" type="radio"  value="iso">
+         <label for="nist">iso xxx</label>
+
+
+    <br>
+
+
+<button onclick="category()">start ></button>
+
+<script>
+function category() {
+if(document.getElementById('nist').checked) {
+location.replace("page41")
+}else if(document.getElementById('iso').checked) {
+location.replace("page42")
+}else if(document.getElementById('cmmc').checked) {
+location.replace("page43")
+}
+}
+</script> 
+            <button type="submit">start</button>
+
+   </form> --}}

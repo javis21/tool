@@ -1,0 +1,121 @@
+
+<div class="container mt-5">
+     {{#each task}}
+    <div class="card">
+        <div class="card-header">
+            Edit assessment
+        </div>
+        <div class="card-body">
+           
+                <form action="/assessments/edit3/{{this.id_ass}}" method="POST">
+
+
+                <div class="form-group">
+                        <label for="apellido">id</label>
+                        <input type="text" class="form-control" name="id_ass" id="id_ass" value="{{this.id_ass}}">
+                    </div>  
+                        <div class="form-group">
+                        <label for="apellido">title</label>
+                        <input type="text" class="form-control" name="title" id="title" value="{{this.title}}">
+                    </div>  
+                    <div class="form-group">
+                        <label for="apellido">date</label>
+                        <input type="text" class="form-control" name="date" id="date" value="{{this.date}}">
+                    </div>  
+                    <div class="form-group">
+                        <label for="profesion">city:</label>
+                        <input type="text" class="form-control" name="city" id="city" value="{{this.city}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">state</label>
+                        <input type="text" class="form-control" name="state" id="state" value="{{this.state}}">
+                    </div>  
+                    <div class="form-group">
+                        <label for="apellido">created_by</label>
+                        <input type="text" class="form-control" name="created_by" id="created_by" value="{{this.created_by}}">
+                    </div>  
+                    
+                       
+                
+            
+        </div>
+    </div>
+
+
+     <div class="card">
+        <div class="card-header">
+            Edit demographie
+        </div>
+        <div class="card-body">
+                         
+               
+
+
+                <div class="form-group">
+                        <label for="apellido">id</label>
+                        <input type="text" class="form-control" name="id_demo" id="id_demo" value="{{this.id_demo}}">
+                    </div>  
+                        <div class="form-group">
+                        <label for="apellido">sector</label>
+                        <input type="text" class="form-control" name="sector" id="sector" value="{{this.sector}}">
+                    </div>  
+                    <div class="form-group">
+                        <label for="apellido">industry</label>
+                        <input type="text" class="form-control" name="industry" id="industry" value="{{this.industry}}">
+                    </div>  
+                    <div class="form-group">
+                        <label for="profesion">protect:</label>
+                        <input type="text" class="form-control" name="protect" id="protect" value="{{this.protect}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">effort</label>
+                        <input type="text" class="form-control" name="effort" id="effort" value="{{this.effort}}">
+                    </div>  
+                    <div class="form-group">
+                        <label for="apellido">org</label>
+                        <input type="text" class="form-control" name="org" id="org" value="{{this.org}}">
+                    </div>  
+
+                      <div class="form-group">
+                        <label for="apellido">unit</label>
+                        <input type="text" class="form-control" name="unit" id="unit" value="{{this.unit}}">
+                    </div>  
+
+                      <div class="form-group">
+                        <label for="apellido">type</label>
+                        <input type="text" class="form-control" name="type" id="type" value="{{this.type}}">
+                    </div>  
+                    
+                  
+        </div>
+    </div>
+
+ <div class="card">
+        <div class="card-header">
+            Edit type
+        </div>
+        <div class="card-body">
+           
+
+                <div class="form-group">
+                        <label for="apellido">id</label>
+                        <input type="text" class="form-control" name="id_types" id="id_types" value="{{this.id_types}}">
+                    </div>  
+                        <div class="form-group">
+                        <label for="apellido">type</label>
+                        <input type="text" class="form-control" name="types" id="types" value="{{this.types}}">
+                    </div>  
+                   
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-sm btn-success">save</button>
+                    </div>        
+                                </form>
+
+            
+        </div>
+    </div>
+
+
+ {{/each}}
+     </div>

@@ -1,0 +1,49 @@
+<div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Send Alert</h4>
+                                
+                                {{!-- <p class="text-muted mb-0">Don't Worry ! Email us your Questions or you can send us twitter.</p> --}}
+                            </div><!--end card-header-->
+                            <div class="card-body">
+                                <div class="row">                                        
+                                    <div class="col-12">
+                                        <form action="/alert/alert" method="POST">
+                                            <div class="form-group row">
+                                                
+                                                <div class="col-lg-6">
+                                                     {{user.username}}     
+                                                   <input type="text" value=" {{user.username}}  " hidden name="sender">
+                                                 
+                                                </div> 
+                                                <div class="col-lg-6">
+                                                    {{!-- <input class="form-control mb-2" type="email" id="example-email-input3" placeholder="Email"> --}}
+                                                      
+             <select class="form-select col-md-6 d-inline p-2"  name="sepcific_user" >
+                              <option value= "all">List of users</option>
+
+               {{#each list}}
+              
+              <option value="{{this.fullname}}" >{{this.fullname}}</option>
+               {{/each}}
+           
+              </select>
+                                                </div>                                                   
+                                            </div>
+                                            
+                                            <div class="form-group row">
+                                                <div class="col-12">
+                                                    <input class="form-control mb-2" type="text" id="subject2" placeholder="Subject" name="subject">                                                       
+                                                </div>                                                    
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control mb-2" id="exampleFormControlTextarea1" rows="4" placeholder="Your message" name="message"></textarea>
+                                            </div>                                                
+                                           
+                                            <button type="submit" class="btn btn-primary btn-block px-4">Send Email</button>
+                                        </form>
+                                    </div><!--end col-->
+                                </div><!--end row-->                                    
+                            </div><!--end card-body-->
+                        </div><!--end card-->
+                    </div><!--end col-->

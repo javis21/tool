@@ -1,0 +1,57 @@
+
+<div class="mt-5 py-5 px-5">
+    <table class="table"  id="main-table">
+        <thead style="background-color: blue; color: white;">
+            <tr> 
+                
+              <th scope="col">id</th>    
+            <th scope="col">user</th>
+                        <th scope="col">answer</th>
+
+            <th scope="col">status</th>
+            <th scope="col">comment</th>
+                <th scope="col">file</th>
+                <th scope="col">assaessment</th>
+                <th scope="col">creation_time</th>
+
+                        {{!-- <th scope="col">edit</th> --}}
+
+          
+            </tr>
+        </thead>
+        <tbody  id="myTable">
+            {{#each question}}
+            <tr>                    
+            <th scope="row">{{this.id_an}}</th>
+            <td>{{this.q3}}</td>
+                 <td>{{this.q2}}</td>
+
+            <td>{{#if this.completed}}
+                completed
+
+{{else}}
+              not completed
+
+{{/if}} </td>
+            <td>{{this.comment}}</td>
+             <td>{{this.file }}</td>
+         
+            <td>{{this.ids}}</td>
+            <td>{{this.creation_time}}</td>
+
+            <td>
+           
+{{!-- <button type="button" onClick="window.location.reload();">Close</button> --}}
+
+                <a href="/question/finished/{{this.id_an}}" class="btn btn-sm btn-danger" > finished </a>
+                 <a href="/question/Notfinished/{{this.id_an}}" class="btn btn-sm btn-danger">not finished </a>
+
+            </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+</div>
+
+

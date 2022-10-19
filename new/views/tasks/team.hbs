@@ -1,0 +1,87 @@
+
+
+      
+
+<div class="mt-5 py-5 px-5">
+    <h1>leader:</h1>
+    <table class="table"  id="main-table">
+        <thead style="background-color: blue; color: white;">
+            <tr> 
+              <th scope="col">id</th>    
+            <th scope="col">leader</th>
+            <th scope="col">fullname</th>
+            <th scope="col">mails</th>
+
+            <th scope="col">number of tasks</th>
+          
+
+                        {{!-- <th scope="col">edit</th> --}}
+
+          
+            </tr>
+        </thead>
+        <tbody  id="myTable">
+            {{#each team}}
+            <tr>                    
+            <th scope="row">{{this.id}}</th>
+            <td>{{this.username}}</td>
+            <td>{{this.fullname}}</td>
+            <td>{{this.mail}}</td>
+                        <td>{{this.id_ass}}</td>
+
+           {{!-- id_annumq1q2q3commentfileids --}}
+
+            
+            <td>
+
+                <a href="/assessments/question/{{this.id_ass}}" class="btn btn-sm btn-danger">view question</a>
+
+            </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+</div>
+
+
+<div class="mt-5 py-5 px-5">
+    <h1>members:</h1>
+    <table class="table">
+        <thead style="background-color: blue; color: white;">
+            <tr> 
+              <th scope="col">id</th>    
+            <th scope="col">member</th>
+            <th scope="col">fullname</th>
+            <th scope="col">mails</th>
+
+            <th scope="col">number of tasks</th>
+          
+
+                        {{!-- <th scope="col">edit</th> --}}
+
+          
+            </tr>
+        </thead>
+        <tbody>
+            {{#each memebers}}
+            <tr>                    
+            <th scope="row">{{this.id}}</th>
+            <td>{{this.username}}.</td>
+            <td>{{this.fullname}}.</td>
+            <td>{{this.mail}}</td>
+
+
+            
+            <td>
+                <a href="/assessments/question1/{{this.username}}/{{this.ids}}" class="btn btn-sm btn-danger">view question</a>
+
+            </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+</div>
+
+

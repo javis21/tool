@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>{{title}}</title>
+ {{> (whichPartial)}}
+</head>
+<body>
+ {{>nav}}
+ <section>
+  {{#each products}}
+  <div class="product">
+   <img src="{{priductUrl}}" alt="{{productAltText}}" />
+   <div class="description">
+    <h3>{{productName}}</h3>
+    <h5>${{productPrice}}</h5>
+    {{#if discountPer}}
+    <span>Discount of ${{calDiscountAmount productPrice      discountPer}}</span>
+    {{#if}}
+    {{#if isInInventory}}
+    <h4>Qty: {{productQty}}</h4>
+    {{else}}
+    <h4>Out of stock</h4>
+    {{/if}}
+    </div>
+   </div>
+  {{/each}}
+  </section>
+ </body>
+</html>

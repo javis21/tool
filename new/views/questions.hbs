@@ -1,0 +1,116 @@
+
+            
+{{#each category}}
+
+    
+       
+
+          <a href="/questions/{{this.category}}"  class="btn  btn-danger" style="user-select: auto; left-margin: 50px;">{{this.category}}</a>
+
+{{/each}}
+
+
+
+ 
+
+        {{!-- <input class="form-control" style="width: 50%;" id="myInput" type="text" placeholder="Search.."> --}}
+
+    
+
+           
+
+
+
+
+
+
+
+{{#if dont_show}}
+
+{{else}}
+
+
+
+
+<div class="mt-5 py-5 px-5">
+           <div class="card">
+                                          <div class="card-body">
+                                                                                <div class="table-responsive">
+
+
+    <table  class="table mb-0"  id="main-table">
+        <thead class="thead-light" >
+            <tr> 
+
+              <th scope="col">id</th>    
+            <th scope="col">main_question</th>
+            <th scope="col">sub_question</th>
+            <th scope="col">question</th>
+                <th scope="col">question_num</th>
+
+            <th scope="col">category</th>
+                        <th scope="col">actions</th>
+
+
+                        {{!-- <th scope="col">edit</th> --}}
+
+          
+            </tr>
+        </thead>
+        <tbody  id="myTable">
+            {{#each question2}}
+            <tr>                      
+
+            <th scope="row">{{this.id}}</th>
+            <td>{{this.main_question}}</td>
+            <td>{{this.sub_question}}</td>
+            <td>{{this.question}}</td>
+             <td>{{this.question_num}}</td>
+
+            <td>{{this.category}}</td>
+
+            
+            <td>
+           <span class="badge badge-boxed  badge-outline-warning">       <a href="/edits/{{this.category}}/{{this.id}}" >edit</a> </span>
+            <span class="badge badge-boxed  badge-outline-danger">   <a href="/delete/{{this.category}}/{{this.id}}">delete</a> </span>   
+            </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+
+  </div>
+    </div>
+
+</div>
+               <span class="badge badge-boxed  badge-outline-success col-md-4">  <a href="/question/add" >add +</a></span>   
+ <h1>Upload question to database </h1>
+      <form action="/question/upload" enctype="multipart/form-data" method="post">
+        <input type="file" name="uploadfile" accept='csv' >
+        <input type="submit" value="Upload CSV">
+      </form> 
+
+</div>
+
+
+
+
+
+
+{{!--      
+    <script src='/javascripts/jquerynav.min.js'></script>
+<script src="/javascripts/search.js"></script>
+
+<script src='/javascripts/dropDownSearch.js'></script>
+ --}}
+
+
+
+
+
+           
+
+
+{{/if}}
+
